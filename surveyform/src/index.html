@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h1 id="title">Survey Form
+  </h1>
+  <p id="description">Let us know how we can improve the services at CodeZero</p>
+  <form id="survey-form" name="survey-form" action="/submit.php" method="post">
+        <!-- onsubmit="return formValidation()" --> 
+    <div id="left-column">
+      <label for="name" id="name-label">Full Name:</label></div>
+    <div id="right-column">
+      <input id="name" class="input-field" type="text" name="name" placeholder="Enter Your Name" required></div>
+    <br>
+    <div id="left-column">
+      <label for="email" id="email-label">Email Address:</label></div>
+    <div id="right-column">
+      <input id="email" class="input-field" type="email" name="email" placeholder="Enter Your Email" required></div>
+    <br>
+    <div id="left-column">
+      <label for="DOB" id="dob-label">Date of Birth:</label></div>
+    <div id="right-column">
+      <input id="DOB" class="input-field" type="date"></div>
+    <br>
+    <div id="left-column">
+      <label for="number" id="number-label">Phone Number:</label></div>
+    <div id="right-column">
+      <input id="number" class="input-field" type="number" placeholder="Enter Your Phone Number"  min="1" max="9" ></div>
+    <br>
+    <div id="left-column">
+      <label for="role" id="role-label">Select Current Role:</label></div>
+    <div id="right-column">
+      <select id="dropdown" name="roles" class="dropdown">
+     <option disabled value>Select an option</option>
+        <option value="Student">Student</option>
+        <option value="Instructor">Instructor</option>
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Senior Developer">Senior Developer</option>
+        </select></div>
+    <br>
+    <div id="left-column">
+      <label for="recommend" id="recommend-label">Would you recommend CodeZero to a friend?</label></div>
+    <div id="right-column">
+      <input type="radio" name="recommend" value="yes">Yes</input>
+      <input type="radio" name="recommend" value="no">No</input>
+    </div>
+    <br>
+    <div id="left-column">
+      <label for="preference" id="preference-label">What is your preference the most at CodeZero?</label></div>
+    <div id="right-column">
+      <input list="preferences" name="preference">
+      <datalist id="preferences">
+        <option value="Curriculum">
+        <option value="Forums">
+        <option value="Online Code Editor">
+        <option value="News">
+    </datalist></div>
+    <br>
+    <div id="left-column">
+      <label for="improvements" id="improvements-label">What area would you suggest our improvements:</label></div>
+    <div id="right-column">
+      <input type="checkbox" name="improvement" value="FrontProjects">Front-end Projects
+      <br>
+      <input type="checkbox" name="improvement" value="BackProjects">Back-end Projects
+      <br>
+      <input type="checkbox" name="improvement" value="DV">Data Visualization
+      <br>
+      <input type="checkbox" name="improvement" value="forum">Forum
+      <br>
+      <input type="checkbox" name="improvement" value="OCE">Online Code Editor
+      <br><br></div>
+    <div id="left-column">
+      <label for="comments" id="comments-label">Any Comments or Suggestions?</label></div><br>
+    <div id="right-column">
+      <textarea rows="4" cols="50" placeholder="Type your comment here..">
+</textarea></div>
+    <br>
+    <button id="submit" type="submit" onClick="formValidation()"> Submit </submit>
+  </form>
+</body>
+<script src="
+  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+</script>
+<script>
+  function formValidation()
+{ 
+  var x, text;
+	var email = document.forms["survey-form"]["email"]; 
+  
+  x = document.getElementById("number").value;
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (isNaN(x))						 
+	{ 
+		window.alert("Please enter numbers only"); 
+		return false; 
+	}
+	return true; 
+} 
+
+</script>
+</html>
